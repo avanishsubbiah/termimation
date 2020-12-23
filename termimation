@@ -6,7 +6,7 @@
 
 # ----- config -----
 sourceFile="$1" # gif or video to display
-destination="$2"
+save_path="$2"
 txt_opts="--colors" # options to pass to the image->text conversion tool
 txtConvert=jp2a # tool to convert images to text; jp2a (default) or img2txt
 cache=-1 # set to a negative value to re-explode the input animation every time
@@ -44,7 +44,9 @@ animate() {
     i=0
     for f in "${frames[@]}"
     do 
-        printf "\e[0;0H%s" "$f" >> $2$i # draw the frame at the 0th row and 0th column; don't interpret $f
+    #"\033c" "\e[0;0H%s" "$f" 
+        printf "$f" >> $save_path/$i # draw the frame at the 0th row and 0th column; don't interpret $f
+        #echo "$save_path" "$1"
         sleep "$delay"
         i=$(($i + 1))
     done
