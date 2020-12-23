@@ -16,7 +16,7 @@ I think `jp2a` gives prettier results out of the box, but both `jp2a` and `img2t
 `ffmpeg` is probably a little bit faster and more versatile than `imagemagick`.
 
 ```
-./termination <insert GIF File Path> <insert save location File Path>
+./termimation <insert GIF File Path> <insert save location File Path>
 ```
 
 ## Warnings
