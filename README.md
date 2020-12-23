@@ -4,6 +4,8 @@ You can [check out a video demonstration here.](https://imgur.com/a/Tup3RIp)
 This was inspired by -- and is a much more general version of -- [malav097's shell-emotions](https://github.com/malav097/shell-emotions).
 Suggestions and pull requests are welcome.
 
+NOTE: This is a modified fork of termination that will instead save the generated ascii frames as seperate text files named from 0-N frames.
+
 ## Usage
 `termimation input.gif` will convert the GIF into a series of images (in `/tmp/`), 
 convert those into an array of text, and display the elements of that array successively to play the animation.
@@ -12,6 +14,10 @@ This will have the same *average* frame rate as the input file.
 
 I think `jp2a` gives prettier results out of the box, but both `jp2a` and `img2txt` can be thoroughly configured. 
 `ffmpeg` is probably a little bit faster and more versatile than `imagemagick`.
+
+```
+./termination <insert GIF File Path> <insert save location File Path>
+```
 
 ## Warnings
 That this draws each frame starting at row 0, column 0 in your terminal in a kind of brute-force way.
